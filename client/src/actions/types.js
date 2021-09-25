@@ -1,0 +1,8 @@
+export const GET_PRODUCTS = 'GET_PRODUCTS';
+export const ADD_TO_CART = 'ADD_TO_CART';
+export const TOTAL_COST = 'TOTAL_COST';
+export const GET_PRODUCT = 'GET_PRODUCT';
+export const REMOVE_SELECTED_PRODUCT = 'REMOVE_SELECTED_PRODUCT';
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+export const REDUCE_TOTAL_COST = 'REDUCE_TOTAL_COST';
+
