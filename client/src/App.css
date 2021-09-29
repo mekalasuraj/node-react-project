@@ -14,7 +14,8 @@
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  /* font-family: 'Raleway', sans-serif; */
+  font-family: 'Red Hat Display', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
@@ -25,46 +26,410 @@ a {
   color: var(--primary-color);
   text-decoration: none;
 }
+.redhat_Light{
+  font-weight: 300;
+} 
 
+.redhat_Regular{
+  font-weight: 400;
+} 
+.redhat_Medium{
+  font-weight: 500;
+} 
+.redhat_Bold{
+  font-weight: 700;
+} 
+
+ 
 ul {
   list-style: none;
 }
 
-img {
-  width: 100%;
+.bg-img{
+  background-image: url("./img/home_Banner.jpg");
+  background-position: 64%;
+background-size: cover;
+background-repeat: no-repeat;
+ 
 }
 
-.text-red{
-  color:rgba(255, 0, 0, 0.88) !important;
+.banner-height{
+  height: 100vh;
 }
 
-.card-title-color{
-  color:#000 !important;
+.carousel .carousel-indicators li{
+    /* width: 15px !important;
+    height: 0px !important;
+    background:#ccc; */
+    /* background-color: #fff!important; */
+width: 8px;
+height: 8px;
+border-radius: 100%;
+margin: 0 10px;
+border: 4px solid transparent;
+box-sizing: content-box;
+box-shadow: 0 0 0 2px #c8c7cc!important;
 }
 
-.card-button-color{
-  background:#000 !important;
+.carousel-indicators .active{
+  opacity: 1;
+  background:#df495b !important;
+  /* background: #df494a!important;
+box-shadow: 0 0 0 1px #df494b!important; */
+  }
+
+.theme-color{
+  color:#df495b !important;
+}
+
+
+
+.item_names{
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.heading_name{
+  text-align: center;
+  margin-bottom: 5%;
+  font-weight: 700;
+}
+
+.img_name_desc{
+  text-align: center;
+  margin-bottom: 5%;
+  font-weight: 500;
+}
+
+.black-color{
+  color: #000;
+}
+.carousel_normal{
+  background:#ccc;
+}
+
+.section_padding{
+  padding-left:19%;
+  padding-right:19%;
+}
+
+.section_padding_table{
+  padding-left:19%;
+  padding-right:19%;
+}
+.gate_img{
+  width: 70px;
+  height: 60px;
+}
+
+.login_btn{
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  color: #fff;
+  padding-left: 19px;
+}
+
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+.transparent_btn{
+  background: transparent;
+  border: 2px solid transparent;
   color: #fff;
 }
 
-.cart-items{
-  border-bottom: 2px solid rgba(204, 204, 204, 0.24);
-  margin-bottom:20px;
+.err_msg{
+  text-align: center;
+background: rgba(255, 0, 0, 0.66);
+color: #fff;
+height: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
-.cartbox{
-  /* position: fixed; */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
- /* padding: 10px; */
+.serch_form{
+box-shadow: 0 3px 6px rgba(0,0,0,.16);
+position: relative;
+background-color: #fff;
+border-radius: 4px;
+display: flex;
+flex-wrap: nowrap;
+margin-left: 18%;
+margin-right: 18%;
+top:53%;
+}
+
+.search_btn{
+  font-size: 18px;
+  width: inherit;
+  background-color: #df495b !important;
+  color: #fff;
+  margin-top: 13px;
+  /* font-weight: 600; */
+  border-radius: 4px!important; 
+  height: 50px;
+margin-top: 40px; 
+}
+
+.header_margin{
+  margin-left: 18%;
+  margin-right: 18%;
+}
+
+.react-datepicker__input-container > input{
+  width: 300px;
+height: 37px;
+border: 1px solid #ced4da;
+border-radius: .25rem;
+padding-left: 12px;
+}
+
+.carousel_div{
+  width: 18%!important;
+margin-left: 20px;
+display: inline-block;
+}
+
+.div-align{
+  display: flex;
+  flex-wrap: nowrap;
+}
+.custom_btn{
+  background: #fff !important;
+color: #000;
+border-radius: 15px;
+width: 100%;
+}
+.custom_btn:hover{
+color: #000;
+}
+
+.custom_btn_active{
+  background-color: #df495b!important;
+color: #fff!important;
+border: 1px solid #df495b!important;
+width: 100%;
+border-radius: 15px;
+}
+
+.bg_grid1{
+  background-image: url("https://img.vistarooms.com/gallery/amara-villa-6b8218.jpg");
+}
+.bg_grid2{
+  background-image: url("https://img.vistarooms.com/gallery/casa-sol-one-70fea0.jpg");
+}
+.bg_grid3{
+  background-image: url("https://img.vistarooms.com/angular_assets/common/property_grid/casa-ela-11-f23935.jpg");
+}
+
+.bg_grid4{
+  background-image: url("https://img.vistarooms.com/angular_assets/common/property_grid/open-house-f831ee.webp");
+}
+.bg_grid5{
+  background-image: url("https://img.vistarooms.com/angular_assets/common/property_grid/pranaam-4ea2cb.webp");
+}
+.bg_grid6{
+  background-image: url("https://img.vistarooms.com/gallery/mr-lonandkars-villa-adc256.jpg");
+}
+
+.bg_grid7{
+  background-image: url("https://img.vistarooms.com/gallery/i0akabtcmnavv7hodwuq.jpg");
+}
+.bg_grid8{
+  background-image: url("https://img.vistarooms.com/angular_assets/common/property_grid/umber-villa-d0e570.webp");
+}
+.bg_grid9{
+  background-image: url("https://img.vistarooms.com/angular_assets/common/property_grid/the-winter-line-6554e0.webp");
+}
+
+.img-con-2{
+  background-color: #ccc;
+height: 359px;
+background-position: 50%;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+}
+
+.prop-img{
+  border-radius: 5px;
+width: 100%;
+}
+
+.card_hover_text{
+  position: relative;
+  top: 83%;
+  background: #fff;
+  text-align: center;
+  width: 100%;
+  display: none;
+}
+
+.content {
+  position: relative;
+  /* width: 90%;
+  max-width: 400px; */
   margin: auto;
-min-width: 400px;
-border:3px solid rgba(0, 0, 0, 0.23);
+  overflow: hidden;
 }
 
-@media screen and (min-width: 700px) {
-  .cartbox {
-    position: fixed;
+.content .content-overlay {
+  /* background: rgba(0,0,0,0.7); */
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.content:hover .content-overlay{
+  opacity: 1;
+}
+
+.content-image{
+  /* width: 100%; */
+  width: auto;
+  height: 359px;
+}
+
+.content-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  background: #fff;
+  top: 90%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, 260%);
+  -moz-transform: translate(-50%, 260%);
+  transform: translate(-50%, 260%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+  border-radius: 3px;
+}
+
+.container_details{
+  background: #fff;
+height: 72px;
+width: 100%;
+border-radius: 0 0 5px 5px;
+margin-top: auto;
+opacity: 0;
+transition: .5s cubic-bezier(.25,.46,.45,.94);
+transform: translateY(100%);
+}
+.content:hover .content-details{
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.content-details h3{
+  color: #000;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.content-details p{
+  color: #000;
+  font-size: 0.8em;
+}
+
+.fadeIn-bottom{
+  top: 67%;
+}
+.input_border{
+  border:1px solid #000;
+}
+.react-datepicker__input-container > input{
+  border:1px solid #000 !important;
+}
+
+/* @media only screen and (max-width: 400px) {
+  .section_padding_table{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
   }
+} */
+
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  text-align: center;
 }
 
+/* @media only screen and (max-width:600px) {
+  
+  .serch_form{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .react-datepicker__input-container > input {
+    width: auto;
+  }
+  .bg-img{
+   background-position: 70%;
+   background-size: cover;
+  }
+} */
 
+#mainNavBar {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.fixNav{
+  position: fixed;
+width: 100%;
+background: #000;
+z-index: 99999;
+left: 0;
+}
+.nav_btn{
+  border:1px solid #fff;
+}
+@media screen 
+ and (max-width: 1400px) 
+ and (min-width: 480px) 
+{ 
+  .serch_form{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .react-datepicker__input-container > input {
+    width: auto;
+  }
+  .bg-img{
+   background-position: 70%;
+   background-size: cover;
+  }
+  .nav_btn{
+    width: 50%;
+  }
+
+}

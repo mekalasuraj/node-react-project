@@ -1,35 +1,31 @@
-import React, { Fragment} from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
-import Landing from './components/Landing';
-import ProductPage from './components/productPage';
-import Practice from './components/practice';
-// Redux
-import { Provider } from 'react-redux';
-import store from './store';
-
-
+//import Landing from './components/Landing';
 import './App.css';
+import ProtectedRoute from './privateRoutes';
 
-// const LandingComponent = React.lazy(() => import('./components/Landing'));
-// const ProductPage = React.lazy(() => import('./components/productPage'));
-
-// const LazyLandingComponent = React.lazy(() => import('./components/Landing'))
-// const LazyProductPage= React.lazy(() => import('./components/productItem'))
+ const LazyLandingComponent = React.lazy(() => import('./components/Landing'));
+ const LazyRegisterComponent = React.lazy(() => import('./components/students/register'));
+ const LazyLoginComponent = React.lazy(() => import('./components/students/login'));
+ const LazyDashboardComponent = React.lazy(() => import('./components/students/dashboard'));
 
 const App = () => {
   
 
+
   return (
-     <Provider store={store}>
+     
       <Router>
-        {/* <React.Suspense fallback={<div>Loading...</div>}> */}
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/product/:id" component={ProductPage} />
-            <Route exact path="/test" component={Practice} />
-        {/* </React.Suspense> */}
+        <React.Suspense fallback={<div>Loading...</div>}>
+            <Route exact path="/" component={LazyLandingComponent} />
+            <Route exact path="/register" component={LazyRegisterComponent} />
+            <Route exact path="/login" component={LazyLoginComponent} />
+            {/* <Route exact path="/dashboard" component={LazyDashboardComponent} /> */}
+            <ProtectedRoute exact path="/dashboard" ><LazyDashboardComponent/></ProtectedRoute>
+        </React.Suspense>
       </Router>
-      </Provider> 
+     
   );
 };
 

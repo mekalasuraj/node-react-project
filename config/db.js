@@ -1,22 +1,19 @@
-// const mongoose = require('mongoose');
-// const config = require('config');
-// //const db = config.get('mongoURI');
 
-// const connectDB = async () => {
-// 	try {
-// 		await mongoose.connect('mongodb://127.0.0.1:27017/my-app', {
-// 			useNewUrlParser: true,
-// 			useCreateIndex: true,
-// 			useFindAndModify: false,
-// 			useUnifiedTopology: true
-// 		});
+const path = require('path');
+var mysql = require('mysql');
+require('dotenv').config({ path: path.resolve(__dirname + '/../.env') });
 
-// 		console.log('MongoDB Connected...');
-// 	} catch (err) {
-// 		console.error(err.message);
-// 		// Exit process with failure
-// 		process.exit(1);
-// 	}
-// };
 
-// module.exports = connectDB;
+
+var connection = mysql.createConnection({
+    host     : process.env.DB_HOST,
+    user     : process.env.DB_USER,
+    password : process.env.DB_PWD,
+    database : process.env.DB_DATABASE
+  });
+
+connection.connect(function (err) {
+  if (err) throw err;
+});
+
+module.exports = connection;
