@@ -160,14 +160,14 @@ align-items: center;
 
 .serch_form{
 box-shadow: 0 3px 6px rgba(0,0,0,.16);
-position: relative;
+/* position: relative; */
 background-color: #fff;
 border-radius: 4px;
 display: flex;
 flex-wrap: nowrap;
 margin-left: 18%;
 margin-right: 18%;
-top:53%;
+/* top:53%; */
 }
 
 .search_btn{

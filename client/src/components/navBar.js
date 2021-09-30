@@ -26,7 +26,7 @@ const NavBar = (props) => {
      
      <div className="col-12">
      <header className="site-header fullscreen-bg">
-              <nav className= {isScrolled ? `site-header navbar navbar-expand-lg navbar-dark z-depth-0 px-md-1 mainNavBar fixNav pt-5`: 'site-header navbar navbar-expand-lg navbar-dark z-depth-0 px-md-1 mainNavBar pt-5'}>
+              <nav className= {isScrolled ? `site-header navbar navbar-expand-lg navbar-dark z-depth-0 px-md-1 mainNavBar fixNav pt-3`: 'site-header navbar navbar-expand-lg navbar-dark z-depth-0 px-md-1 mainNavBar pt-5'}>
                 <div className="container">
                   <a className="navbar-brand" href="/" id="main_logo">
                     <img src={WHITE} style={{ width: 100 }} alt="Card cap"/>

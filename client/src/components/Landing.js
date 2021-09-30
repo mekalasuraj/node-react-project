@@ -61,10 +61,11 @@ let gridOneImages=[
       <div className="bg-img banner-height">
         
         <NavBar/>
-        <div className="header_margin" style={{position:'relative',top:'19%',color:'#fff'}}>
+        <div className="header_margin" style={{position:'absolute',top:'19%',color:'#fff'}}>
          <h2 className="redhat_Bold">A NEW EVERYDAY <br/> BEGINS NOW.</h2>
          <p className="redhat_Regular">CHECK IN TO SUN, SERENITY & SPLENDOUR.</p>
        </div>
+       <div style={{position: 'absolute',top:'62%',width:'100%'}}>
         <div className="serch_form ">
         
         <div className="form-outline p-3" style={{width:'30%'}}>
@@ -83,7 +84,7 @@ let gridOneImages=[
       
         <button type="button" className="btn btn-primary btn-sm search_btn">Search</button>
   </div>
-        
+        </div>
         </div>
         
         <section className="mt-5">
