@@ -7,11 +7,15 @@ const Dashboard = (props) => {
     const [studentData, setStudentData] = useState([]);
 
     let data=sessionStorage.getItem('user') ? JSON.parse(sessionStorage.getItem('user')):'';
-   
+    let token=sessionStorage.getItem('token') ? sessionStorage.getItem('token'):'';
     useEffect(()=>{
-        axios.get(`/api/users/student/records/${data.userId}`)
+        axios.get(`/api/users/student/records/${data.user.id}`,{
+          headers:{
+            "x-auth-token":token
+          }
+        })
         .then(response=>{
-           
+           console.log(response.data);
             setStudentData(response.data.data)
         });
     },[])
@@ -21,6 +25,7 @@ const Dashboard = (props) => {
         sessionStorage.removeItem('user');
         window.location.href='/login'
     }
+    
   return (
     <div>
      
@@ -30,7 +35,7 @@ const Dashboard = (props) => {
              
              </div>
              <div className="col-4">
-                 <h3 className="text-center mt-5 mb-5">{data.name} Profile DashBoard</h3>
+                 <h3 className="text-center mt-5 mb-5">{data.user.name} Profile DashBoard</h3>
        
                  <table className="table table-striped table-hover">
         

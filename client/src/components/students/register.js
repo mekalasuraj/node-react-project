@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
-
+import jwt_decode from "jwt-decode";
 
 const Register = (props) => {
     const [formData, setFormData] = useState({
@@ -37,10 +37,14 @@ const Register = (props) => {
            prevData:inputData
         })
        .then(response=>{
-          
+       
+            
            if(response.data.message === "Successfully_Inserted"){
-               window.location.href='/login'
-               
+              
+               var decoded = jwt_decode(response.data.token);
+               sessionStorage.setItem('user',JSON.stringify(decoded))
+               sessionStorage.setItem('token',response.data.token)
+               window.location.href='/dashboard';
            }
        })
       };

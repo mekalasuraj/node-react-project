@@ -8,6 +8,10 @@ const NavBar = (props) => {
  
   useEffect(()=>{
     window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll',handleScroll);
+    };
   })
 
  const handleScroll= () => {

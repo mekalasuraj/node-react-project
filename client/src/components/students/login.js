@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, {useEffect,useState} from 'react';
 import axios from 'axios';
-
+import jwt_decode from "jwt-decode";
 
 const Login = (props) => {
     const [formData, setFormData] = useState({
@@ -8,6 +8,8 @@ const Login = (props) => {
         password: ''
       });
       const [showError, setError] = useState(false);
+
+      
     const onSTudentsDetailsCahnge=(e)=>{
         setFormData({ ...formData, [e.target.name]: e.target.value });
     }
@@ -17,11 +19,16 @@ const Login = (props) => {
     
        axios.post('/api/users/auth/student',formData)
        .then(response=>{
+        
+        
+
          
            if(response.data.message === "record_found"){
+            var decoded = jwt_decode(response.data.token);
+            console.log(decoded);    
                setFormData({email: '',password: ''});
-               let dataObj={userId:response.data.userId,email:response.data.email,name:response.data.name}
-               sessionStorage.setItem('user',JSON.stringify(dataObj))
+               sessionStorage.setItem('user',JSON.stringify(decoded))
+               sessionStorage.setItem('token',response.data.token)
                window.location.href='/dashboard';
            } else if(response.data.message === "No_Matches"){
             setError(true);
