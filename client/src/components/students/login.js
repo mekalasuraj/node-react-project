@@ -1,6 +1,9 @@
 import React, {useEffect,useState} from 'react';
 import axios from 'axios';
 import jwt_decode from "jwt-decode";
+import { Formik, Form ,ErrorMessage, useField} from 'formik';
+import * as Yup from 'yup';
+import TextField from './textfield';
 
 const Login = (props) => {
     const [formData, setFormData] = useState({
@@ -36,15 +39,25 @@ const Login = (props) => {
        })
       };
 
+      const validate = Yup.object({
+       
+        email: Yup.string()
+          .email('Email is invalid')
+          .required('Email is required'),
+        password: Yup.string()
+          .min(5, 'Password must be at least 5 charaters')
+          .required('Password is required')
+      })
+
   return (
-    <div>
+    <>
      
      <div className="col-12">
          <div className="row">
              <div className="col-4"></div>
              <div className="col-4">
                  <h3 className="text-center mt-5 mb-5">Login</h3>
-                 {
+                 {/* {
                      showError &&
                      (<div className="err_msg mb-4">Invalid Credentials</div>)
                  }
@@ -63,14 +76,57 @@ const Login = (props) => {
             
                 <button type="submit" className="btn btn-primary btn-block mb-3">Sign In</button>
             </form>
-                <a href='/register' className="mt-3" style={{textDecoration:'underline'}}>Register</a>
+                <a href='/register' className="mt-3" style={{textDecoration:'underline'}}>Register</a> */}
+
+<Formik
+      initialValues={{
+        email: '',
+        password: '',
+      }}
+      validationSchema={validate}
+      onSubmit={values => {
+        console.log(values)
+        let formData ={email:values.email,password:values.password};
+        axios.post('/api/users/auth/student',formData)
+       .then(response=>{
+           if(response.data.message === "record_found"){
+            var decoded = jwt_decode(response.data.token);
+            console.log(decoded);    
+               setFormData({email: '',password: ''});
+               sessionStorage.setItem('user',JSON.stringify(decoded))
+               sessionStorage.setItem('token',response.data.token)
+               window.location.href='/dashboard';
+           } else if(response.data.message === "No_Matches"){
+            setError(true);
+           }
+       })
+      }}
+    >
+      {formik => (
+        <div>
+          <h1 className="my-4 font-weight-bold .display-4">Sign Up</h1>
+          {
+                     showError &&
+                     (<div className="err_msg mb-4">Invalid Credentials</div>)
+                 }
+          <Form>
+          <TextField label="Email" name="email" type="email" />
+            <TextField label="password" name="password" type="password" />
+            <button className="btn btn-primary btn-block mb-3" type="submit">Login</button>
+            
+          </Form>
+          <a href='/register' className="mt-3" style={{textDecoration:'underline'}}>Register</a> 
+        </div>
+      )}
+    </Formik>
              </div>
              <div className="col-4"></div>
          </div>
      
+    
      </div>
      
-    </div>
+    </>
   );
 };
 

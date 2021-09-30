@@ -413,6 +413,13 @@ left: 0;
 .nav_btn{
   border:1px solid #fff;
 }
+
+.error {
+
+  color: red;
+  font-size: .9rem;
+}
+
 @media screen 
  and (max-width: 1400px) 
  and (min-width: 480px) 

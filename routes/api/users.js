@@ -59,7 +59,7 @@ router.post('/add/student',(req,res)=>{
 
 //  Login API
 router.post('/auth/student',(req,res)=>{
-  
+
   connection.query('select id,name,email,password from students where email =?',[req.body.email] ,function (error, results) {
     if (error) throw error;
    

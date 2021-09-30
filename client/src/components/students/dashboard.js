@@ -15,7 +15,7 @@ const Dashboard = (props) => {
           }
         })
         .then(response=>{
-           console.log(response.data);
+         
             setStudentData(response.data.data)
         });
     },[])
